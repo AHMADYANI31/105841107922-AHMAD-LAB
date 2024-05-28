@@ -4,28 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tugas2.html</title>
+    <style>
+        .random-color {
+            color: black; /* Default color, will be overwritten by JavaScript */
+        }
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #f2f2f2; /* Added background color */
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+            color: white; /* Added text color */
+        }
+        th {
+            background-color: #333; /* Changed background color */
+        }
+        img {
+            display: block;
+            margin: 0 auto; /* Centering the image */
+        }
+    </style>
 </head>
 <body>
-    <h1>
+    <h1 class="random-color">
         Judul Utama (H1)
     </h1>
     <p>ini adalah pargraf pertama. paragraf ini memberikan pengantar tentang isi halaman ini.</p>
-    <h2>
+    <h3 class="random-color">
         Subjudul Pertama (H2)
-    </h2>
+    </h3>
     <p>ini adalah paragraf kedua. Paragraf ini memberikan informasi lebih lanjut tentang subjudul pertama.</p>
-    <h3>
+    <h3 class="random-color">
         Subjudul Kedua (H3)
     </h3>
-    <p>ini adalah paragraf ketiga. Paragraf ini memberikan informasi tambahan tentang subjuduk kedua.</p>
-    <h4>
+    <p>ini adalah paragraf ketiga. Paragraf ini memberikan informasi tambahan tentang subjudul kedua.</p>
+    <h4 class="random-color">
         Subjudul Ketiga (H4)
     </h4>
-    <p>ini adalah paragraf keempat. Paragraf ini memberikan detail lebih rinci tentang subjudul ketiga </p>
-    <h5>
+    <p>ini adalah paragraf keempat. Paragraf ini memberikan detail lebih rinci tentang subjudul ketiga.</p>
+    <h5 class="random-color">
         Subjudul Keempat (H5)
     </h5>
-    <p>Ini adalah paragraf kelima. Paragraf ini berisi informasi terakhir yang ingin disampaikan </p>
-    <img src ="https://simak.unismuh.ac.id/upload/mahasiswa/105841107922_.jpg " width="200" length="200" alt="foto AHMAD">
+    <p>Ini adalah paragraf kelima. Paragraf ini berisi informasi terakhir yang ingin disampaikan.</p>
+    <img src="https://simak.unismuh.ac.id/upload/mahasiswa/105841107922_.jpg" width="200" length="300" alt="foto AHMAD">
+
+    <!-- Table Section -->
+    <table>
+        <tr>
+            <th style="background-color: #333;">Nama</th>
+            <td style="color: black;">Ahmad Yani</td>
+        </tr>
+        <tr>
+            <th style="background-color: #333;">NIM</th>
+            <td style="color: black;">105841107922</td>
+        </tr>
+        <tr>
+            <th style="background-color: #333;">Kelas</th>
+            <td style="color: black;">4C</td>
+        </tr>
+    </table>
+
+    <script>
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function applyRandomColors() {
+            const elements = document.querySelectorAll('.random-color');
+            elements.forEach(element => {
+                element.style.color = getRandomColor();
+            });
+        }
+
+        window.onload = applyRandomColors;
+    </script>
 </body>
 </html>
